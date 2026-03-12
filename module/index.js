@@ -1,4 +1,4 @@
-import SudokuModule from '../build/sudoku.js';
+import SudokuModule from './sudoku.js';
 
 const mod = await SudokuModule();
 const _solve = mod.cwrap('solve', 'string', ['string']);
