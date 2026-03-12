@@ -109,7 +109,6 @@ int solve_grid(char grid[9][9])
         i++;
     }
     g_solved_flat[81] = '\0';
-    print_grid(cpy_grid);
     return (1);
 }
 

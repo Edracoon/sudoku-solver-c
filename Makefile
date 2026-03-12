@@ -2,9 +2,9 @@ NAME		=	sudoku
 
 CFLAGS		=	-Wall -Wextra -Werror
 
-SRCS		=	main.c sudoku.c check.c
+SRCS		=	src/main.c src/sudoku.c src/check.c
 
-WASM_SRCS	=	sudoku.c check.c wasm.c
+WASM_SRCS	=	src/sudoku.c src/check.c src/wasm.c
 
 all:			$(NAME)
 
