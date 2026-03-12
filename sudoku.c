@@ -12,6 +12,13 @@
 
 #include "sudoku.h"
 
+static char g_solved_flat[82];
+
+const char *get_solved_flat(void)
+{
+    return (g_solved_flat);
+}
+
 void print_grid(char cpy_grid[9][9])
 {
     int x;
@@ -63,8 +70,6 @@ int fill_curr_case(int x, int y, char cpy_grid[9][9])
         if (check_line_row(x, y, value, cpy_grid))
         {
             cpy_grid[y][x] = value;
-            // print_grid(cpy_grid);
-            // system("clear");
             if (check_3x3(x, y, value, cpy_grid))
                 if ((solve_grid(cpy_grid)))
                     return (1);
@@ -79,6 +84,7 @@ int solve_grid(char grid[9][9])
     char cpy_grid[9][9];
     int x;
     int y;
+    int i;
 
     copy_grid(grid, cpy_grid);
     x = 0;
@@ -94,6 +100,30 @@ int solve_grid(char grid[9][9])
         x = 0;
         y++;
     }
+
+    // Grid is solved
+    i = 0;
+    while (i < 81)
+    {
+        g_solved_flat[i] = cpy_grid[i / 9][i % 9];
+        i++;
+    }
+    g_solved_flat[81] = '\0';
     print_grid(cpy_grid);
+    return (1);
+}
+
+int check_and_solve(char grid[9][9])
+{
+    if (check_grid(grid) == -1)
+    {
+        write(STDERR_FILENO, "Error : grid file invalid\n", 28);
+        return (0);
+    }
+    if (!solve_grid(grid))
+    {
+        write(1, "Error : No Solve\n", 17);
+        return (0);
+    }
     return (1);
 }

@@ -1,0 +1,18 @@
+{
+    "name": "sudoku-solver-wasm",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "module/index.js",
+    "types": "module/index.d.ts",
+    "files": [
+        "module/",
+        "module/build/"
+    ],
+    "scripts": {
+        "build": "make wasm",
+        "prepublishOnly": "npm run build"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0"
+    }
+}
