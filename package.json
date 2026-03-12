@@ -9,9 +9,13 @@
     ],
     "scripts": {
         "build": "make wasm",
+        "tests": "node tests/test.js",
         "prepublishOnly": "npm run build"
     },
     "devDependencies": {
         "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "sudoku-solver-wasm": "^1.1.0"
     }
 }
