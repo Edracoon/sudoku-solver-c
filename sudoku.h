@@ -11,15 +11,18 @@
 /* ************************************************************************** */
 
 #ifndef TOWERDOKU_H
-# define TOWERDOKU_H
+#define TOWERDOKU_H
 
-# include <unistd.h>
-# include <stdio.h>
-# include <fcntl.h>
-# include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <stdlib.h>
 
-int					check_line_row(int x, int y, int value, char cpymap[9][9]);
-int					check_3x3(int x, int y, int value, char cpymap[9][9]);
-int					resolve_map(char map[9][9]);
+int read_grid(char *pathname, char grid[9][9]);
+int check_grid(char grid[9][9]);
+int check_and_solve(char grid[9][9]);
+int check_line_row(int x, int y, int value, char cpy_grid[9][9]);
+int check_3x3(int x, int y, int value, char cpy_grid[9][9]);
+int solve_grid(char grid[9][9]);
 
 #endif

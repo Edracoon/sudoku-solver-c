@@ -1,4 +1,4 @@
-NAME		=	Sudoku
+NAME		=	sudoku
 
 CFLAGS		=	-Wall -Wextra -Werror
 
