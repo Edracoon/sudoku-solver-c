@@ -12,9 +12,9 @@ $(NAME):
 				gcc	$(CFLAGS) $(SRCS) -o $(NAME)
 
 wasm:
-				mkdir -p module/build
+				mkdir -p module
 				emcc $(WASM_SRCS) \
-					-o module/build/sudoku.js \
+					-o module/sudoku.js \
 					-s MODULARIZE=1 \
 					-s EXPORT_NAME='SudokuModule' \
 					-s EXPORTED_FUNCTIONS='["_solve"]' \
@@ -27,7 +27,7 @@ fclean:
 				rm -rf $(NAME)
 
 wclean:
-				rm -rf module/build/
+				rm -rf module/sudoku.*
 
 re:				fclean all
 
