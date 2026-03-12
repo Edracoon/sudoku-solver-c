@@ -80,3 +80,22 @@ void set_cub(int *cubx, int *cuby)
         break;
     }
 }
+
+int check_grid(char grid[9][9])
+{
+    int x;
+    int y = 0;
+
+    while (y < 9)
+    {
+        x = 0;
+        while (x < 9)
+        {
+            if (!(grid[y][x] >= '0' && grid[y][x] <= '9'))
+                return (-1);
+            x++;
+        }
+        y++;
+    }
+    return (0);
+}

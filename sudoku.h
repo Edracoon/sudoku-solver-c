@@ -18,11 +18,12 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
-int read_grid(char *pathname, char grid[9][9]);
-int check_grid(char grid[9][9]);
-int check_and_solve(char grid[9][9]);
-int check_line_row(int x, int y, int value, char cpy_grid[9][9]);
-int check_3x3(int x, int y, int value, char cpy_grid[9][9]);
-int solve_grid(char grid[9][9]);
+int			read_file(char *pathname, char grid[9][9]);
+int			check_grid(char grid[9][9]);
+int			check_and_solve(char grid[9][9]);
+int			check_line_row(int x, int y, int value, char cpy_grid[9][9]);
+int			check_3x3(int x, int y, int value, char cpy_grid[9][9]);
+int			solve_grid(char grid[9][9]);
+const char	*get_solved_flat(void);
 
 #endif

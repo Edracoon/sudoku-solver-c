@@ -12,7 +12,7 @@
 
 #include "sudoku.h"
 
-int read_grid(char *pathname, char grid[9][9])
+int read_file(char *pathname, char grid[9][9])
 {
     int fd;
     int r;
@@ -41,37 +41,6 @@ int read_grid(char *pathname, char grid[9][9])
     return (0);
 }
 
-int check_grid(char grid[9][9])
-{
-    int x;
-    int y = 0;
-
-    while (y < 9)
-    {
-        x = 0;
-        while (x < 9)
-        {
-            if (!(grid[y][x] >= '0' && grid[y][x] <= '9'))
-                return (-1);
-            x++;
-        }
-        y++;
-    }
-    return (0);
-}
-
-int check_and_solve(char grid[9][9])
-{
-    if (check_grid(grid) == -1)
-    {
-        write(STDERR_FILENO, "Error : grid file invalid\n", 28);
-        return (0);
-    }
-    if (!solve_grid(grid))
-        write(1, "Error : No Solve\n", 17);
-    return (1);
-}
-
 int main(int ac, char **av)
 {
     char grid[9][9];
@@ -81,7 +50,7 @@ int main(int ac, char **av)
         write(STDOUT_FILENO, "Error : [./sudoku] [grid]\n", 28);
         return (0);
     }
-    if (read_grid(av[1], grid) == -1)
+    if (read_file(av[1], grid) == -1)
     {
         write(STDERR_FILENO, "Error : file invalid\n", 28);
         return (0);
