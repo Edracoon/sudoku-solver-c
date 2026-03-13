@@ -1,4 +1,4 @@
-# sudoku-solver-wasm
+# @edracoon/sudoku-solver-wasm
 
 A fast Sudoku solver compiled to WebAssembly from C.
 
@@ -7,13 +7,13 @@ The solving logic is written in C using a **backtracking algorithm** and compile
 ## Install
 
 ```sh
-npm install sudoku-solver-wasm
+npm install @edracoon/sudoku-solver-wasm
 ```
 
 ## Usage
 
 ```js
-import { solve } from 'sudoku-solver-wasm';
+import { solve } from '@edracoon/sudoku-solver-wasm';
 ```
 
 `solve(grid)` accepts either a **2D array** or a **flat 81-character string** and always returns a `number[][]`, or `null` if the puzzle has no solution or the input is invalid (wrong length, invalid characters).
