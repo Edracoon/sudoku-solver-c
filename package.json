@@ -1,6 +1,10 @@
 {
     "name": "@edracoon/sudoku-solver-wasm",
-    "version": "1.6.1",
+    "version": "1.6.2",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Edracoon/sudoku-solver-wasm"
+    },
     "type": "module",
     "main": "module/index.js",
     "types": "module/index.d.ts",
