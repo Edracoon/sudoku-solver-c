@@ -1,4 +1,4 @@
-# @edracoon/sudoku-solver-wasm
+# sudoku-solver-wasm
 
 A fast Sudoku solver compiled to WebAssembly from C.
 

@@ -1,4 +1,4 @@
-import { solve } from "sudoku-solver-wasm";
+import { solve } from "@edracoon/sudoku-solver-wasm";
 
 // With string input
 const easyGrid = '687004910913000000254700000045090001006105040000000200400560030002473090508921704';
