@@ -1,5 +1,7 @@
 # sudoku-solver-wasm
 
+[![npm](https://img.shields.io/npm/v/@edracoon/sudoku-solver-wasm)](https://www.npmjs.com/package/@edracoon/sudoku-solver-wasm)
+
 A fast Sudoku solver compiled to WebAssembly from C.
 
 The solving logic is written in C using a **backtracking algorithm** and compiled to WASM via [Emscripten](https://emscripten.org/). The JS layer is a thin wrapper that handles input/output conversion — no runtime dependencies.
